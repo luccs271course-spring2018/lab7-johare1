@@ -4,20 +4,22 @@ import java.util.Scanner;
 
 public class ReverseLines {
 
-  public static void main(final String[] args) {
-    // TODO read successive input lines until EOF, then print out in reverse order
+  public static void main(String[] args) {
+    // DONE read successive input lines until EOF, then print out in reverse order
 
-
+    LinkedStack<String> newStack = new LinkedStack<String>();
 
     final Scanner input = new Scanner(System.in);
-    while (input.hasNextLine()) {
-      final String line = input.nextLine();
+    String line;
 
+    while ((line = input.nextLine()) != null) {
 
-
+      newStack.push(line);
     }
 
+    while (!newStack.isEmpty()) {
 
-
+      System.out.print(newStack.pop());
+    }
   }
 }
